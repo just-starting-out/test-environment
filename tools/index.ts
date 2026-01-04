@@ -12,9 +12,3 @@ function serialize(form: HTMLFormElement): string {
     }
     return params.toString();
 }
-let formHandlers;
-const afterHandlers = [];
-const beforeHandlers = [];
-export function afterRemote(fn: () => void): void {
-    afterHandlers.push(fn);
-}
