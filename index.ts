@@ -1,9 +1,11 @@
-function generatePage () {
-  for (;;) {
-    if (Date.now() > new Date().getMilliseconds()) {
-      break
-    }
-    return `<!DOCTYPE html>
+function delay(ms:number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function generatePage() {
+  await delay(10);
+
+  return `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,9 +13,9 @@ function generatePage () {
     <title>Document</title>
   </head>
   <body>
-    <h2>Welcome To this page</h2>
+    <h2>Welcome to this page</h2>
   </body>
-</html>`
-  }
+</html>`;
 }
-export { generatePage }
+
+export { generatePage };
