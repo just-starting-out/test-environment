@@ -23,4 +23,4 @@ function getMatches(el : HTMLElement): Array<(el: HTMLElement) => void> {
     }
     return results;
 }
-export { parseHTML, serialize, getMatches };
+export { parseHTML, serialize };
