@@ -12,4 +12,15 @@ function serialize(form: HTMLFormElement): string {
     }
     return params.toString();
 }
+let formHandlers = new Map<string, Array<(el: HTMLElement) => void>>();
+function getMatches(el : HTMLElement): Array<(el: HTMLElement) => void> {
+    const results = [];
+    for (const selector of formHandlers.keys()) {
+        if (el.matches(selector)) {
+            const handlers = formHandlers.get(selector) || [];
+            results.push(...handlers);
+        }
+    }
+    return results;
+}
 export { parseHTML, serialize };
