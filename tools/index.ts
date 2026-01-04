@@ -12,3 +12,4 @@ function serialize(form: HTMLFormElement): string {
     }
     return params.toString();
 }
+export { parseHTML, serialize };
